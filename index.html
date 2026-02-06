@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hyper-Local Food Rescue Network</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="container">
+        <h1>Hyper-Local Food Rescue Network</h1>
+        <p>
+          A beginner-friendly demo of a real-time platform that connects food donors,
+          NGOs, and volunteers before food spoils.
+        </p>
+        <div class="hero-metrics">
+          <article>
+            <span id="mealsRescued">0</span>
+            <small>Meals Rescued</small>
+          </article>
+          <article>
+            <span id="kgSaved">0</span>
+            <small>KG Saved</small>
+          </article>
+          <article>
+            <span id="socialCredits">0</span>
+            <small>Volunteer Credits</small>
+          </article>
+        </div>
+      </div>
+    </header>
+
+    <main class="container grid">
+      <section class="card">
+        <h2>1) Donor Posts Food</h2>
+        <form id="donorForm">
+          <label>Food Item
+            <input type="text" id="foodItem" placeholder="Rice & Dal" required />
+          </label>
+          <label>Quantity (kg)
+            <input type="number" id="quantity" min="1" max="200" required />
+          </label>
+          <label>Pickup Deadline
+            <input type="time" id="deadline" required />
+          </label>
+          <label>Location
+            <input type="text" id="location" placeholder="Campus Gate 2" required />
+          </label>
+          <button type="submit">Post Listing</button>
+        </form>
+        <p class="hint">Tip: Posting triggers instant alerts to receivers in this demo.</p>
+      </section>
+
+      <section class="card">
+        <h2>2) Live Listings & Claim</h2>
+        <div id="feed" class="feed empty">No live listings yet.</div>
+      </section>
+
+      <section class="card">
+        <h2>3) Best Route Suggestion</h2>
+        <p>
+          Demo algorithm: prioritizes earliest deadline, then shortest distance. This is
+          a simple stand-in for an advanced route engine.
+        </p>
+        <label>Volunteer Base Distance Radius (km)
+          <input type="range" min="1" max="20" value="8" id="radius" />
+        </label>
+        <div id="routeResult" class="result">Create listings to see route recommendations.</div>
+      </section>
+
+      <section class="card">
+        <h2>4) Gamification & Trust</h2>
+        <ul>
+          <li>✅ QR/OTP step is simulated at pickup and delivery.</li>
+          <li>✅ Volunteers earn social credits per completed rescue.</li>
+          <li>✅ Status timeline: Posted → Claimed → Picked Up → Delivered.</li>
+        </ul>
+        <div class="badges" id="badges"></div>
+      </section>
+
+      <section class="card full">
+        <h2>5) Step-wise Build Plan (Different Tech Stacks)</h2>
+        <div class="stacks">
+          <article>
+            <h3>MERN</h3>
+            <ol>
+              <li>Auth + role models</li>
+              <li>Listing/claim APIs</li>
+              <li>Socket alerts</li>
+              <li>Map routing + OTP</li>
+            </ol>
+          </article>
+          <article>
+            <h3>Django + React</h3>
+            <ol>
+              <li>DRF + PostgreSQL models</li>
+              <li>Role permissions</li>
+              <li>Celery notifications</li>
+              <li>Admin trust dashboard</li>
+            </ol>
+          </article>
+          <article>
+            <h3>Firebase + Flutter</h3>
+            <ol>
+              <li>Firestore collections</li>
+              <li>Realtime listeners</li>
+              <li>Cloud Functions match engine</li>
+              <li>FCM pushes + leaderboards</li>
+            </ol>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="container footer">
+      Built as an educational demo. Next step: connect to backend APIs for real-world use.
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
