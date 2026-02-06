@@ -1,0 +1,125 @@
+:root {
+  --bg: #f7f9fc;
+  --card: #ffffff;
+  --text: #1a2433;
+  --accent: #1f6feb;
+  --success: #0f9d58;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+.hero {
+  background: linear-gradient(135deg, #1f6feb 0%, #16a085 100%);
+  color: #fff;
+  padding: 2rem 0;
+}
+.hero h1 { margin: 0 0 0.5rem; }
+.hero-metrics {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.hero-metrics article {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.9rem 1.2rem;
+  border-radius: 12px;
+  min-width: 140px;
+}
+.hero-metrics span {
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: block;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin: 1.3rem auto;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 3px 14px rgba(0, 20, 46, 0.08);
+}
+.card.full { grid-column: 1 / -1; }
+
+h2 { margin-top: 0; font-size: 1.1rem; }
+label { display: block; margin-bottom: 0.65rem; font-weight: 600; }
+input, button {
+  width: 100%;
+  margin-top: 0.3rem;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #ced6e0;
+}
+button {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.feed.empty {
+  color: #5c6f86;
+  font-style: italic;
+}
+.listing {
+  border: 1px solid #d8e3f0;
+  border-radius: 10px;
+  padding: 0.8rem;
+  margin-bottom: 0.7rem;
+}
+.listing h4 {
+  margin: 0 0 0.4rem;
+}
+.status {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border-radius: 20px;
+  background: #e6f4ea;
+  color: #116f3a;
+  font-size: 0.8rem;
+  margin-bottom: 0.4rem;
+}
+
+.stacks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+.badges {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.badge {
+  background: #fff3cd;
+  color: #73510d;
+  border: 1px solid #f7dc8b;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+}
+.hint { color: #55667d; font-size: 0.9rem; }
+.footer { color: #526176; padding-bottom: 1.5rem; }
+.result {
+  background: #f2f7ff;
+  border: 1px solid #d7e6ff;
+  padding: 0.7rem;
+  border-radius: 8px;
+}
